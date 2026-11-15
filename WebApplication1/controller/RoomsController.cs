@@ -1,23 +1,23 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
-namespace WebApplication1.Models.controller
+namespace WebApplication1.controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelsController : ControllerBase
+    public class RoomsController : ControllerBase
     {
         MyDataContext db = new MyDataContext();
         [HttpGet]
-        public List<Hotels> GetAllHotels()
+        public List<Rooms> GetAllRooms()
         {
-            return db.Hotels.ToList();
+            return db.Rooms.ToList();
 
         }
         [HttpPost]
-        public void AddHotels(Hotels hotel)
+        public void AddRooms(Rooms Room)
         {
-            db.Hotels.Add(hotel);
+            db.Rooms.Add(Room);
             db.SaveChanges();
         }
 

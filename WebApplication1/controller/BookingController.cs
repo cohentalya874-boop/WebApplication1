@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
 
-namespace WebApplication1.Models.controller
+namespace WebApplication1.controller
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -11,7 +11,7 @@ namespace WebApplication1.Models.controller
     {
         MyDataContext db = new MyDataContext();
         [HttpGet]
-        public List<Bookings>GetAllBookings()
+        public List<Bookings> GetAllBookings()
         {
             return db.Bookings.ToList();
 
