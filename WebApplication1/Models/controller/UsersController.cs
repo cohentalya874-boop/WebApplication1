@@ -20,6 +20,11 @@ namespace WebApplication1.Models.controller
             db.Users.Add(User);
             db.SaveChanges();
         }
-
+        [HttpPut]
+        public void UpdateUsers(Users User)
+        {
+            db.Users.Update(User);
+            db.SaveChanges();
+        }
     }
 }
