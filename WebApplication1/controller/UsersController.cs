@@ -23,7 +23,13 @@ namespace WebApplication1.controller
         [HttpPut]
         public void UpdateUsers(Users User)
         {
-            db.Users.Update(User);
+            Users u=db.Users.FirstOrDefault(x => x.Id == User.Id);   
+            u.NumUsers = User.NumUsers;
+            u.FirstName = User.FirstName;
+            u.LastName = User.LastName;
+            u.Email = User.Email;
+            u.PasswordHash = User.PasswordHash;
+            db.Users.Update(u);
             db.SaveChanges();
         }
     }
