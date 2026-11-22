@@ -20,6 +20,11 @@ namespace WebApplication1.controller
             db.Rooms.Add(Room);
             db.SaveChanges();
         }
-
+        [HttpPut]
+        public void UpdateRooms(Rooms Room)
+        {
+            db.Rooms.Update(Room);
+            db.SaveChanges();
+        }
     }
 }
