@@ -20,9 +20,11 @@ namespace WebApplication1.controller
             db.Rooms.Add(Room);
             db.SaveChanges();
         }
+        //הפעולה לא מושלמת
         [HttpPut]
         public void UpdateRooms(Rooms Room)
         {
+            Rooms r =db.Rooms.FirstOrDefault(r => r.IdRoom==Room.IdRoom);
             db.Rooms.Update(Room);
             db.SaveChanges();
         }
